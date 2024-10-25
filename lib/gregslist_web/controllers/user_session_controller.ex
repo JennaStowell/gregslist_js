@@ -12,6 +12,7 @@ defmodule GregslistWeb.UserSessionController do
     conn
     |> put_session(:user_return_to, ~p"/users/settings")
     |> create(params, "Password updated successfully!")
+
   end
 
   def create(conn, params) do
@@ -23,6 +24,8 @@ defmodule GregslistWeb.UserSessionController do
 
     if user = Accounts.get_user_by_email_and_password(email, password) do
       conn
+      |> put_session(:user_email, user.email)
+      |> put_session(:user_id, user.id)
       |> put_flash(:info, info)
       |> UserAuth.log_in_user(user, user_params)
     else

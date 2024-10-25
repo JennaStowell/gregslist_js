@@ -3,10 +3,19 @@ defmodule GregslistWeb.ItemLive.Show do
 
   alias Gregslist.Galleries
 
-  @impl true
-  def mount(_params, _session, socket) do
-    {:ok, socket}
-  end
+@impl true
+def mount(_params, session, socket) do
+  current_user = session["current_user"] # Retrieve the current user from the session
+
+  socket =
+    socket
+    |> assign(:current_user, current_user)
+    |> assign(:items, Galleries.list_items())
+
+  {:ok, socket}
+end
+
+
 
   @impl true
   def handle_params(%{"id" => id}, _, socket) do

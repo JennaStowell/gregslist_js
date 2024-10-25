@@ -7,6 +7,7 @@ defmodule Gregslist.Repo.Migrations.CreateItems do
       add :desc, :string
       add :price, :float
       add :location, :string
+      add :art_image, :string
 
       timestamps(type: :utc_datetime)
     end

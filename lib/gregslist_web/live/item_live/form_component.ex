@@ -1,7 +1,12 @@
 defmodule GregslistWeb.ItemLive.FormComponent do
   use GregslistWeb, :live_component
 
+
+
+
   alias Gregslist.Galleries
+  alias Gregslist.Galleries
+  
 
   @impl true
   def render(assigns) do
@@ -23,6 +28,8 @@ defmodule GregslistWeb.ItemLive.FormComponent do
         <.input field={@form[:desc]} type="text" label="Desc" />
         <.input field={@form[:price]} type="number" label="Price" step="any" />
         <.input field={@form[:location]} type="text" label="Location" />
+        <.input field={@form[:art_image]} type="file" label="Item Picture" />
+        <.input field={@form[:user_id]} type="hidden"  value={@current_user.id} />
         <:actions>
           <.button phx-disable-with="Saving...">Save Item</.button>
         </:actions>
@@ -31,16 +38,30 @@ defmodule GregslistWeb.ItemLive.FormComponent do
     """
   end
 
+
+@impl true
+  def mount(_params, %{"current_user" => current_user} = _session, socket) do
+  socket = 
+    socket 
+    |> assign(:uploads, %{})
+    |> allow_upload(:art_image, accept: ~w(.jpg .jpeg .png), max_entries: 1)
+    |> assign(:items, Galleries.list_items())
+    |> assign(:current_user, current_user)
+
+  {:ok, socket}
+end
+
   @impl true
   def update(%{item: item} = assigns, socket) do
-  changeset = Galleries.change_item(item)
+  _changeset = Galleries.change_item(item)
     {:ok,
      socket
      |> assign(assigns)
      |> assign_new(:form, fn ->
        to_form(Galleries.change_item(item))
       end)}
-  end
+end
+
 
   @impl true
   def handle_event("validate", %{"item" => item_params}, socket) do

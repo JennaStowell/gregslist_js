@@ -1,6 +1,6 @@
 <.header>
-  Item <%= @item.id %>
-  <:subtitle>This is a item record from your database.</:subtitle>
+  Item <%= @item.item_name %>
+  <:subtitle><%= @item.user_id %>'s Item For Sale</:subtitle>
   <:actions>
     <.link patch={~p"/items/#{@item}/show/edit"} phx-click={JS.push_focus()}>
       <.button>Edit item</.button>
@@ -13,6 +13,13 @@
   <:item title="Desc"><%= @item.desc %></:item>
   <:item title="Price"><%= @item.price %></:item>
   <:item title="Location"><%= @item.location %></:item>
+  <:item title="Image">
+    <%= if @item.art_image do %>
+      <img src={~p"/images/#{Path.basename(@item.art_image)}"} alt="Item Image" />
+    <% else %>
+      No image uploaded
+    <% end %>
+  </:item>
 </.list>
 
 <.back navigate={~p"/items"}>Back to items</.back>
