@@ -51,6 +51,7 @@ defmodule GregslistWeb.ItemLive.FormComponent do
 
   def handle_event("save", %{"item" => item_params}, socket) do
     save_item(socket, socket.assigns.action, item_params)
+    {:noreply, socket |> assign(:form_submitted, true)}
   end
 
   defp save_item(socket, :edit, item_params) do
@@ -65,6 +66,7 @@ defmodule GregslistWeb.ItemLive.FormComponent do
 
       {:error, %Ecto.Changeset{} = changeset} ->
         {:noreply, assign(socket, form: to_form(changeset))}
+        
     end
   end
 

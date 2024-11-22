@@ -8,15 +8,7 @@ defmodule Gregslist.Galleries do
 
   alias Gregslist.Galleries.Item
 
-  @doc """
-  Returns the list of items.
-
-  ## Examples
-
-      iex> list_items()
-      [%Item{}, ...]
-
-  """
+  
 
   @doc """
   Gets a single item.

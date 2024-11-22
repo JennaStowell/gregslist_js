@@ -3,38 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logged In - GregsList</title>
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen bg-gray-100 flex items-center justify-center">
 
-  <!-- Main Content Wrapper -->
-  <div class="bg-white shadow-xl rounded-lg p-8 max-w-lg w-full space-y-8">
 
-    <!-- Header Section -->
-    <header class="text-center">
-      <h1 class="text-4xl font-semibold text-gray-800 mb-4">
-        Hey <span class="text-indigo-600">Greg!</span>
-      </h1>
-      <p class="text-lg text-gray-600">Ready to list your first item or explore the categories?</p>
-    </header>
-
-    <!-- Action Buttons -->
-    <div class="flex flex-col gap-4">
-
-      <!-- Sell an Item Button -->
-      <a href="/new" class="w-full text-center bg-indigo-600 text-white py-3 rounded-lg shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all duration-300">
-        List an Item
+<body class="bg-gray-100">
+  <div class="max-w-6xl mx-auto py-8 px-4">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6"> <span class="text-indigo-600">Gregslist</span> Categories</h1>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <a href="/technology" class="flex flex-col items-center p-4 border rounded-lg hover:bg-gray-100">
+        <svg class="h-8 w-8 text-neutral-900"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+                   
+        <h2 class="text-lg font-medium text-gray-700">Technology</h2>
+      </a>
+      <a href="/furniture" class="flex flex-col items-center p-4 border rounded-lg hover:bg-gray-100">
+        <svg class="h-8 w-8 text-neutral-900"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="5 12 3 12 12 3 21 12 19 12" />  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+        <h2 class="text-lg font-medium text-gray-700">Furniture</h2>
+      </a>
+      <a href="/vehicles" class="flex flex-col items-center p-4 border rounded-lg hover:bg-gray-100">
+        <svg class="h-8 w-8 text-neutral-900"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="17" r="2" />  <circle cx="17" cy="17" r="2" />  <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" /></svg>
+        <h2 class="text-lg font-medium text-gray-700">Vehicles</h2>
+      </a>
+      <a href="/clothes" class="flex flex-col items-center p-4 border rounded-lg hover:bg-gray-100">
+        <svg class="h-8 w-8 text-neutral-900"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M15 4l6 2v5h-3v8a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-8h-3v-5l6 -2a3 3 0 0 0 6 0" /></svg>
+        <h2 class="text-lg font-medium text-gray-700">Clothing</h2>
+      </a>
+      <a href="/business" class="flex flex-col items-center p-4 border rounded-lg hover:bg-gray-100">
+        <svg class="h-8 w-8 text-neutral-900"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          
+        <h2 class="text-lg font-medium text-gray-700">Business</h2>
+      </a>
+      <a href="/other" class="flex flex-col items-center p-4 border rounded-lg hover:bg-gray-100">
+        <svg class="h-8 w-8 text-neutral-900"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        <h2 class="text-lg font-medium text-gray-700">Other</h2>
+        
       </a>
 
-      <!-- Browse Categories Button -->
-      <a href="/categories" class="w-full text-center bg-indigo-600 text-white py-3 rounded-lg shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-all duration-300">
-        Browse Categories
-      </a>
+      <div class="w-full text-center mt-8">
+        <a href="/items/new" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition-colors duration-300">
+          List an Item
+        </a>
+      </div>
 
+      <div class="w-full text-center mt-8">
+        <a href="/search" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition-colors duration-300">
+          Advanced Search
+        </a>
+      </div>
+
+      <div class="w-full text-center mt-8">
+        <a href="/search" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition-colors duration-300">
+          Third Button
+        </a>
+      </div>
+      
+      
+      
+      
     </div>
   </div>
-
 </body>
 </html>
 
