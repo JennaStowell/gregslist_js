@@ -43,6 +43,7 @@ defmodule GregslistWeb.Router do
 
     live "/items/:id", ItemLive.Show, :show
     live "/items/:id/show/edit", ItemLive.Show, :edit
+
   end
 
   # Other scopes may use custom stacks.

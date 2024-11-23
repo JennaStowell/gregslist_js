@@ -129,7 +129,7 @@ end
             <% end %>
             <h3 class="font-semibold text-xl text-indigo-600"><%= item.item_name %></h3>
             <p class="text-gray-600"><%= item.desc %></p>
-            <p class="text-green-600 font-semibold">$<%= item.price %></p>
+            <p class="text-indigo-700 font-semibold">$<%= item.price %></p>
             <p class="text-gray-500">Category: <%= item.categories %></p>
             <p class="text-gray-500">Location: <%= item.location %></p>
           </div>

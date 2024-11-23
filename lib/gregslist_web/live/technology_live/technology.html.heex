@@ -1,5 +1,5 @@
 <header class="mb-4">
-  <h2 class="text-xl font-medium text-purple-700 flex items-center ml-2">
+  <h2 class="text-xl font-medium text-gray-400 flex items-center ml-2">
   <a href="/gregslist">
     <span class="mr-1">←</span>
     Back to Categories
@@ -7,21 +7,21 @@
   </h2>
 </header>
 <div class="container mx-auto p-4">
-  <h1 class="text-3xl font-bold text-center text-pink-600 mb-8">Technology</h1>
+  <h1 class="text-5xl font-bold text-center text-indigo-700 mb-8">Technology</h1>
 
 <div class="mb-4 flex space-x-2">
 <h2>Sort by Price: </h2>
   <button 
     phx-click="sort" 
     phx-value-sort_order="asc" 
-    class={"px-4 py-2 rounded #{if @sort_order == "asc", do: "bg-blue-500 text-white", else: "bg-gray-200"}"}
+    class={"px-4 py-2 rounded #{if @sort_order == "asc", do: "bg-gray-600 text-white", else: "bg-gray-200"}"}
   >
     Lowest to Highest
   </button>
   <button 
     phx-click="sort" 
     phx-value-sort_order="desc" 
-    class={"px-4 py-2 rounded #{if @sort_order == "desc", do: "bg-blue-500 text-white", else: "bg-gray-200"}"}
+    class={"px-4 py-2 rounded #{if @sort_order == "desc", do: "bg-gray-600 text-white", else: "bg-gray-200"}"}
   >
     Highest to Lowest
   </button>
@@ -36,12 +36,12 @@
           <%= if item.images !=nil && length(item.images) > 0 do %>
             <img src={hd(item.images).dataUrl} />
           <% end %>
-          <h2 class="text-2xl font-semibold text-purple-700 mb-2"><%= item.item_name %></h2>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-2"><%= item.item_name %></h2>
           <p class="text-gray-500 italic mb-2">Listed by <%= item.user_name %></p>
           <p class="text-gray-700 mb-4"><%= item.desc %></p>
-          <p class="text-pink-600 font-semibold mb-2"><strong>Price:</strong> $<%= item.price %></p>
+          <p class="text-indigo-700 font-semibold mb-2"><strong>Price:</strong> $<%= item.price %></p>
           <p class="text-gray-700 mb-4"><strong>Location:</strong> <%= item.location %></p>
-          <button class="bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-600 transition">Contact Seller</button>
+          <button class="bg-indigo-700 text-white px-4 py-2 rounded-md hover:bg-indigo-300 transition">Contact Seller</button>
         </div>
       <% end %>
     </div>
